@@ -10,7 +10,6 @@
 <body>
 <center style='margin-top:50px'>
     <div><h1>Teachable Machine Image Model</h1></div>
-    <button class="w3-btn w3-white w3-border w3-border-blue w3-round" style='width: 400px;font-size: 20px;'type="button" onclick="init()">Start</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
@@ -49,6 +48,7 @@
             for (let i = 0; i < maxPredictions; i++) { // and class labels
                 labelContainer.appendChild(document.createElement("div"));
                 labelContainer.appendChild(document.createElement("progress"));
+
             }
         }
     
@@ -68,6 +68,7 @@
                 labelContainer.childNodes[i].innerHTML = classPrediction;
                 document.querySelectorAll('progress')[i].max = 100
                 document.querySelectorAll('progress')[i].value = prediction[i].probability.toFixed(2)*100
+                document.querySelectorAll('progress')[i].style.width = '400px'
             }
         }
     </script>
