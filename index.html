@@ -65,7 +65,7 @@
             prediction = await model.predict(webcam.canvas);
             for (let i = 0; i < maxPredictions; i++) {
                 var classPrediction =
-                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                    prediction[i].className + ": " + prediction[i].probability.toFixed(2)*100+"%";
                 labelContainer.childNodes[0+2*i].innerHTML = classPrediction;
                 document.querySelectorAll('progress')[i].max = 100
                 document.querySelectorAll('progress')[i].value = prediction[i].probability.toFixed(2)*100
