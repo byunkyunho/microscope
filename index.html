@@ -65,7 +65,7 @@
             for (let i = 0; i < maxPredictions; i++) {
                 var classPrediction =
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                labelContainer.childNodes[i].innerHTML = classPrediction;
+                labelContainer.childNodes[0+2*i].innerHTML = classPrediction;
                 document.querySelectorAll('progress')[i].max = 100
                 document.querySelectorAll('progress')[i].value = prediction[i].probability.toFixed(2)*100
                 document.querySelectorAll('progress')[i].style.width = '400px'
